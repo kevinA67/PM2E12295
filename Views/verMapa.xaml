@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PM2E12295.Views.verMapa"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
+    Title="">
+
+    <Grid BackgroundColor="White">
+        <!--  Content Grid  -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Header Frame -->
+        <Frame
+            Grid.Row="0"
+            Margin="0,0,0,15"
+            Padding="0,10,0,10"
+           
+            BorderColor="White"
+            CornerRadius="20">
+            <StackLayout>
+                <!-- Botón Regresar -->
+                <StackLayout
+                    Margin="0,0,0,0"
+                    Padding="0,0,0,0"
+                    BackgroundColor="Transparent"
+                    Orientation="Horizontal">
+
+                    <Button
+                        x:Name="btnSalir"
+                        Margin="5,0,0,0"
+                        BackgroundColor="#F08080"
+                        Clicked="btnSalir_Clicked"
+                        CornerRadius="20"
+                        FontSize="12"
+                        HeightRequest="40"
+                        Text="Atras"
+                        TextColor="Black"
+                        WidthRequest="70" />
+
+                    <BoxView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" />
+
+                    <Label
+                        x:Name="labelSitio"
+                        Margin="0,0,30,0"
+                        FontAttributes="Bold"
+                        Text=""
+                        TextColor="Black"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <!-- Body: Collection View with Map -->
+        <ScrollView Grid.Row="1">
+            <maps:Map
+                x:Name="mapa"
+                Margin="10,10,10,10"
+                HeightRequest="500"
+                IsShowingUser="True"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                BackgroundColor="Transparent" />
+        </ScrollView>
+
+        <!-- Button for sharing -->
+        <Frame
+            Grid.Row="2"
+            Margin="0,0,0,0"
+            Padding="0,10,0,10"
+            BackgroundColor="White"
+            BorderColor="White"
+            CornerRadius="20">
+            <StackLayout
+                Margin="0,0,0,0"
+                BackgroundColor="Transparent"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="btnShare"
+                    Margin="10,0,5,0"
+                    BackgroundColor="#F08080"
+                    Clicked="btnShare_Clicked"
+                    CornerRadius="20"
+                    FontSize="12"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Compartir Sitio"
+                    TextColor="Black" />
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

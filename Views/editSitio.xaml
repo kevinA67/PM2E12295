@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PM2E12295.Views.editSitio"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:convert="clr-namespace:PM2E12295.Controllers"
+    Title="ACTUALIZAR SITIO"
+    BackgroundColor="Black">
+
+    <ContentPage.Resources>
+        <convert:base64Image x:Key="BaseArray" />
+    </ContentPage.Resources>
+
+    <Grid BackgroundColor="White">
+        <!--  Content Grid  -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--  Header  -->
+        <Frame
+            Grid.Row="0"
+            Margin="0,0,0,15"
+            Padding="0,10,0,10"
+            
+            BorderColor="White"
+            CornerRadius="20">
+            <StackLayout
+                Margin="0,0,0,0"
+                Padding="0,0,0,0"
+                BackgroundColor="Transparent"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="btnRegresar"
+                    Margin="20,0,0,0"
+                    BackgroundColor="#F08080"
+                    Clicked="btnRegresar_Clicked"
+                    CornerRadius="20"
+                    FontSize="12"
+                    HeightRequest="40"
+                    Text="Atras"
+                    TextColor="Black"
+                    WidthRequest="90" />
+                <!--  Spacer  -->
+                <BoxView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" />
+                <Label
+                    Margin="10,10,30,0"
+                    FontAttributes="Bold"
+                    Text="ACTUALIZAR SITIO"
+                    TextColor="Black"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </Frame>
+
+        <!--  Body: Formulario de Edición  -->
+        <ScrollView Grid.Row="1">
+            <StackLayout>
+                <StackLayout Margin="5" Padding="10" BackgroundColor="Transparent">
+
+                    <Label
+                        Margin="0,5,0,10"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        Text="Imagen Sitio Visitado"
+                        TextColor="Black" />
+
+                    <Image
+                        x:Name="imgSitio"
+                        Margin="0,0,0,10"
+                        Aspect="AspectFit"
+                        HeightRequest="200"
+                        HorizontalOptions="FillAndExpand"
+                        Source="{Binding imagen, Converter={StaticResource BaseArray}}"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="200" />
+
+                    <Label
+                        Margin="0,10,0,5"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Latitud"
+                        TextColor="Black"
+                        VerticalOptions="Start"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        x:Name="labelLatitude"
+                        Margin="0,0,0,10"
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding latitud}"
+                        TextColor="Black"
+                        VerticalOptions="Start"
+                        VerticalTextAlignment="Center" />
+
+                    <Label
+                        Margin="0,10,0,5"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Longitud"
+                        TextColor="Black"
+                        VerticalOptions="Start"
+                        VerticalTextAlignment="Center" />
+
+                    <Label
+                        x:Name="labelLongitude"
+                        Margin="0,0,0,10"
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding longitud}"
+                        TextColor="Black"
+                        VerticalOptions="Start"
+                        VerticalTextAlignment="Center" />
+
+                    <Label
+                        Margin="0,10,0,5"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Descripción"
+                        TextColor="Black"
+                        VerticalOptions="Start"
+                        VerticalTextAlignment="Center" />
+
+                    <Frame
+                        Margin="0,0,0,10"
+                        BackgroundColor="#EDEDED"
+                        BorderColor="{DynamicResource TealPrimary}">
+                        <Editor
+                            x:Name="entryDescripcion"
+                            Margin="0,0,0,0"
+                            BackgroundColor="Transparent"
+                            FontSize="16"
+                            HeightRequest="70"
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="Descripción"
+                            Text="{Binding descripcion}"
+                            TextColor="Black"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="200" />
+                    </Frame>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+        <!--  Botón de Actualizar  -->
+        <Button
+            Grid.Row="2"
+            Margin="20"
+            BackgroundColor="#F08080"
+            Clicked="btnActualizar_Clicked"
+            CornerRadius="20"
+            FontSize="12"
+            HeightRequest="40"
+            HorizontalOptions="FillAndExpand"
+            Text="Actualizar"
+            TextColor="Black" />
+
+    </Grid>
+</ContentPage>

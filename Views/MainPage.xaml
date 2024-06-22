@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PM2E12295.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="SITE VISITOR APP"
+    BackgroundColor="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Frame
+            Grid.Row="0"
+            Margin="0,0,0,15"
+            Padding="5"
+            >
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Image
+                    Source="uthlogo.png"
+                    Aspect="AspectFit"
+                    HeightRequest="40"
+                    WidthRequest="40"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Text="SITE VISITOR APP"
+                    TextColor="Black"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    VerticalOptions="CenterAndExpand"
+                    Margin="10,0,0,0" />
+            </StackLayout>
+        </Frame>
+
+        <!-- Content -->
+        <ScrollView Grid.Row="1">
+            <StackLayout Padding="10" Spacing="10">
+                <Image
+                    x:Name="imgSitio"
+                    Source="defaultsite.png"
+                    Aspect="AspectFit"
+                    HeightRequest="200"
+                    VerticalOptions="Center" />
+
+                <Button
+                    x:Name="btnTomarFoto"
+                    BackgroundColor="#F08080"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HeightRequest="40"
+                    FontSize="16"
+                    Text="Tomar Foto"
+                    Clicked="btnTomarFoto_Clicked" />
+
+                <Label
+                    Text="Latitud"
+                    TextColor="Black"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center" />
+                <Label
+                    x:Name="labelLatitude"
+                    Text="00.00"
+                    TextColor="Black"
+                    FontSize="16"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="Longitud"
+                    TextColor="Black"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center" />
+                <Label
+                    x:Name="labelLongitude"
+                    Text="00.00"
+                    TextColor="Black"
+                    FontSize="16"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="Descripción"
+                    TextColor="Black"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center" />
+                <Editor
+                    x:Name="entryDescripcion"
+                    BackgroundColor="#EEEEEE"
+                    TextColor="Black"
+                    FontSize="16"
+                    HeightRequest="100"
+                    Placeholder="Descripción" />
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Buttons -->
+        <Frame
+            Grid.Row="2"
+            Margin="10"
+            Padding="10"
+         
+            CornerRadius="0">
+            <StackLayout Orientation="Horizontal" Spacing="5">
+                <Button
+                    x:Name="btnAgregar"
+                    BackgroundColor="#F08080"
+                    TextColor="Black"
+                    CornerRadius="20"
+                    HeightRequest="40"
+                    FontSize="15"
+                    Text="Agregar"
+                    Clicked="btnAgregar_Clicked" />
+
+                <Button
+                    x:Name="btnListaSitios"
+                    BackgroundColor="#F08080"
+                    TextColor="Black"
+                    CornerRadius="20"
+                    HeightRequest="40"
+                    FontSize="15"
+                    Text="Lista de Sitios"
+                    Clicked="btnListaSitios_Clicked" />
+
+                <Button
+                    x:Name="btnSalir"
+                    BackgroundColor="Red"
+                    TextColor="Black"
+                    CornerRadius="20"
+                    HeightRequest="40"
+                    FontSize="16"
+                    Text="Salir App"
+                    Clicked="btnSalir_Clicked" />
+            </StackLayout>
+        </Frame>
+
+    </Grid>
+
+</ContentPage>

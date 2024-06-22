@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PM2E12295.Views.verFoto"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:convert="clr-namespace:PM2E12295.Controllers"
+    Title="">
+
+    <ContentPage.Resources>
+        <convert:base64Image x:Key="BaseArray" />
+    </ContentPage.Resources>
+
+    <Grid BackgroundColor="White">
+        <!--  Content Grid  -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <!-- Uncomment the following RowDefinition if you have content below -->
+            <!-- <RowDefinition Height="Auto" /> -->
+        </Grid.RowDefinitions>
+
+        <!-- Header Frame -->
+        <Frame
+            Grid.Row="0"
+            Margin="0,0,0,15"
+            Padding="0,10,0,10"
+            BackgroundColor="White"
+            BorderColor="{DynamicResource TealPrimary}"
+            CornerRadius="20">
+            <StackLayout>
+                <!-- Botón Regresar -->
+                <StackLayout
+                    Margin="0,0,0,0"
+                    Padding="0,0,0,0"
+                    BackgroundColor="Transparent"
+                    Orientation="Horizontal">
+
+                    <Button
+                        x:Name="btnSalir"
+                        Margin="20,0,0,0"
+                        BackgroundColor="{DynamicResource TealPrimary}"
+                        Clicked="btnSalir_Clicked"
+                        CornerRadius="20"
+                        FontSize="12"
+                        HeightRequest="40"
+                        Text="Atras"
+                        TextColor="White"
+                        WidthRequest="90" />
+
+                    <BoxView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" />
+
+                    <Label
+                        x:Name="labelSitio"
+                        Margin="0,0,30,0"
+                        FontAttributes="Bold"
+                        Text="{Binding descripcion}"
+                        TextColor="White"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <!-- Body: Image Display -->
+        <ScrollView Grid.Row="1">
+            <Frame
+                Margin="10"
+                BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Image
+                    x:Name="imgSitio"
+                    Margin="0"
+                    Aspect="AspectFit"
+                    HorizontalOptions="FillAndExpand"
+                    Source="{Binding imagen, Converter={StaticResource BaseArray}}"
+                    VerticalOptions="CenterAndExpand" />
+            </Frame>
+        </ScrollView>
+
+        <!-- Uncomment the following Frame if you have content below -->
+        <!--
+        <Frame
+            Grid.Row="2"
+            Margin="10"
+            BackgroundColor="White"
+            BorderColor="{DynamicResource TealPrimary}"
+            CornerRadius="20">
+            <StackLayout
+                Margin="10"
+                BackgroundColor="Transparent"
+                Orientation="Horizontal">
+                Content here
+            </StackLayout>
+        </Frame>
+        -->
+
+    </Grid>
+</ContentPage>
